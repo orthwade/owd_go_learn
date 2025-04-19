@@ -5,6 +5,11 @@ import (
 	"math/rand"
 )
 
+func tryDefer() {
+	defer fmt.Println("This will be printed at the end of the function")
+	fmt.Println("This will be printed first")
+}
+
 func main() {
 	var arrStr = [3]string{"a", "b", "c"}
 
@@ -79,4 +84,11 @@ func main() {
 	for i, _ := range arrStr {
 		fmt.Printf("Index: %d\n", i)
 	}
+
+	fmt.Println("Defer example")
+
+	tryDefer()
+
+	fmt.Println("After defer")
+
 }
